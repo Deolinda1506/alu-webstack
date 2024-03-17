@@ -28,20 +28,20 @@ frontend www-http
     bind *:80
     mode http
     redirect scheme https if !{ ssl_fc }
-    acl host_www hdr(host) -i www.takura.tech
+    acl host_www hdr(host) -i www.Deolinda.tech
     use_backend www-backend if host_www
 
 frontend www-https
     bind *:443 ssl crt /home/ubuntu/ssl
     mode http
-    acl host_www hdr(host) -i www.takura.tech
+    acl host_www hdr(host) -i www.Deolinda.tech
     use_backend www-backend if host_www
 
 backend www-backend
     mode http
     balance roundrobin
-    server webserver1 54.90.129.171:80 check
-    server webserver2 18.232.173.253:80 check
+    server webserver1 54.88.81.187:80 check
+    server webserver2 54.166.96.63:80 check
     # Add more server lines as needed
 
 listen stats
